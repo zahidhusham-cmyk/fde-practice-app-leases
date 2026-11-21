@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lease · Larkspur Property Group</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header><a href="/">Larkspur Property Group · Lease Billing</a></header>
+  <main>
+    <p><a id="back-link" href="/">← Rent roll</a></p>
+    <h1 id="tenant-name">Loading…</h1>
+    <p class="muted" id="lease-meta"></p>
+    <p id="message" class="message"></p>
+
+    <div class="summary" id="summary"></div>
+
+    <h2>Invoices</h2>
+    <table>
+      <thead>
+        <tr><th>Due</th><th>Description</th><th class="num">Amount</th><th class="num">Paid</th><th class="num">Open</th></tr>
+      </thead>
+      <tbody id="invoices"></tbody>
+    </table>
+
+    <h2>Payments</h2>
+    <table>
+      <thead>
+        <tr><th>Received</th><th>Reference</th><th class="num">Amount</th><th class="num">Applied</th><th class="num">Unapplied</th></tr>
+      </thead>
+      <tbody id="payments"></tbody>
+    </table>
+
+    <h2>Record a payment</h2>
+    <form id="payment-form" class="card">
+      <label>Received on <input type="date" name="received_on" required></label>
+      <label>Amount (USD) <input type="text" name="amount" placeholder="4,850.00" required></label>
+      <label>Reference <input type="text" name="reference" maxlength="100" placeholder="ACH, check #…"></label>
+      <button type="submit">Record payment</button>
+    </form>
+    <p id="payment-message" class="message"></p>
+
+    <h2>Monthly statement</h2>
+    <form id="statement-form" class="toolbar">
+      <label>Month <input type="month" name="month" required></label>
+      <button type="submit">Show statement</button>
+    </form>
+    <div id="statement"></div>
+  </main>
+  <script type="module" src="/js/lease.js"></script>
+</body>
+</html>

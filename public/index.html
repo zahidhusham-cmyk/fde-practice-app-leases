@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Properties · Larkspur Property Group</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header><a href="/">Larkspur Property Group · Lease Billing</a></header>
+  <main>
+    <h1>Properties</h1>
+    <p class="muted" id="as-of"></p>
+    <p id="message" class="message"></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Type</th>
+          <th>Address</th>
+          <th class="num">Units</th>
+          <th class="num">Occupied</th>
+          <th class="num">Monthly rent</th>
+        </tr>
+      </thead>
+      <tbody id="properties"></tbody>
+    </table>
+
+    <h2>Bill rent for a month</h2>
+    <p class="muted">Creates the rent invoice for every lease active in the month. Running it twice for the same month does nothing the second time.</p>
+    <form id="generate-form" class="card">
+      <label>Month <input type="month" name="month" required></label>
+      <button type="submit">Generate invoices</button>
+    </form>
+    <p id="generate-message" class="message"></p>
+  </main>
+  <script type="module" src="/js/properties.js"></script>
+</body>
+</html>
